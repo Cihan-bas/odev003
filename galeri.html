@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Galerisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .gallery-item {
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .modal-body img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Resim Galerisi</h1>
+        
+        <div class="row">
+            <!-- Resim 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=1" 
+                     data-title="Resim 1">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Resim 1" class="img-thumbnail">
+                     <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Resim 2 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=2" 
+                     data-title="Resim 2">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Resim 2" class="img-thumbnail">
+                     <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Resim 3 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=3" 
+                     data-title="Resim 3">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Resim 3" class="img-thumbnail">
+                     <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Resim 4 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=4" 
+                     data-title="Resim 4">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Resim 4" class="img-thumbnail">
+                     <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Resim 5 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=5" 
+                     data-title="Resim 5">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Resim 5" class="img-thumbnail">
+                     <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Resim 6 -->
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
+                     data-image="https://picsum.photos/800/600?random=6" 
+                     data-title="Resim 6">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Resim 6" class="img-thumbnail">
+                        <div class="gallery-overlay">
+                            <span>Büyüt</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Bootstrap Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Resim</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('imageModalLabel');
+        
+        imageModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const imageUrl = button.getAttribute('data-image');
+            const imageTitle = button.getAttribute('data-title');
+            
+            modalImage.src = imageUrl;
+            modalImage.alt = imageTitle;
+            modalTitle.textContent = imageTitle;
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
